@@ -1,0 +1,39 @@
+{
+    "schema": {
+        "type": "object",
+        "properties": {
+            "framework": {
+                "title": "フレームワーク",
+                "type": "string",
+                "enum": ["karma", "testem"]
+            },
+            "src_files": {
+                "type": "array",
+                "title": "テスト対象ファイル",
+                "items": {
+                    "type": "string",
+                    "required": false
+                }
+            }
+        },
+        "required": ["name"]
+    },
+    "form": [
+        "framework",
+        {
+            "key": "src_files",
+            "add": "New",
+            "style": {
+                "add": "btn-success"
+            },
+            "items": [
+                "src_files[]"
+            ]
+        },
+        {
+            "type": "submit",
+            "style": "btn-info",
+            "title": "OK"
+        }
+    ]
+}

@@ -5,7 +5,7 @@
             "framework": {
                 "title": "フレームワーク",
                 "type": "string",
-                "enum": ["karma", "testem"]
+                "enum": ["jasmine", "jasmine2", "mocha", "qunit"]
             },
             "src_files": {
                 "title": "テスト対象ファイル",

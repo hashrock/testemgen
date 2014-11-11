@@ -8,9 +8,10 @@
                 "enum": ["karma", "testem"]
             },
             "src_files": {
-                "type": "array",
                 "title": "テスト対象ファイル",
+                "type": "array",
                 "items": {
+                    "title": "globで指定（test/**/*.js など）",
                     "type": "string",
                     "required": false
                 }

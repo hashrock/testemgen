@@ -31,5 +31,12 @@
                 "src_files[]"
             ]
         }
-    ]
+    ],
+    "model": {
+        "framework": "mocha",
+        "src_files": [
+            "test/**/*.js",
+            "lib/**/*.js"
+        ]
+    }
 }

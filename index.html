@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Testem.json maker</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="bower_components/pickadate/lib/themes/classic.css">
+    <link rel="stylesheet" href="bower_components/pickadate/lib/themes/classic.date.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-vertical-tabs/bootstrap.vertical-tabs.min.css">
+    <link rel="stylesheet" href="bower_components/spectrum/spectrum.css">
+    <style>
+        li.matched{
+            background: #fff772;
+        }
+    </style>
+</head>
+<body ng-app="test" ng-controller="TestCtrl">
+
+<div class="container">
+    <div class="col-md-12">
+        <div class="row">
+            <h1>Testem.json maker</h1>
+            <div class="col-sm-6">
+                <form name="ngform"
+                      sf-model="modelData"
+                      sf-form="form"
+                      sf-schema="schema"
+                      ng-submit="submitForm(ngform,modelData)">
+                </form>
+            </div>
+            <div class="col-sm-6">
+                <h3>出力（testem.json）</h3>
+                <pre ng-cloak>{{pretty()}}</pre>
+
+                <h3>テスト対象ファイル例</h3>
+                <p>該当するファイル名がハイライトされます。</p>
+                <ul ng-repeat="case in matchedCase">
+                    <li ng-if="case.matched" class="matched">{{case.file}}</li>
+                    <li ng-if="!case.matched">{{case.file}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="http://cdn.jsdelivr.net/g/jquery.ui@1.10"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+
+<script type="text/javascript" src="bower_components/tv4/tv4.js"></script>
+<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script> -->
+<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular-sanitize.min.js"></script> -->
+
+
+<script type="text/javascript" src="bower_components/angular-ui-sortable/sortable.js"></script>
+<script type="text/javascript" src="bower_components/objectpath/lib/ObjectPath.js"></script>
+<script type="text/javascript" src="bower_components/pickadate/lib/picker.js"></script>
+<script type="text/javascript" src="bower_components/pickadate/lib/picker.date.js"></script>
+<script type="text/javascript" src="bower_components/pickadate/lib/translations/sv_SE.js"></script>
+
+<script type="text/javascript" src="bower_components/spectrum/spectrum.js"></script>
+<script type="text/javascript" src="bower_components/spectrum/i18n/jquery.spectrum-sv.js"></script>
+<script type="text/javascript" src="bower_components/angular-spectrum-colorpicker/dist/angular-spectrum-colorpicker.min.js"></script>
+
+
+<script type="text/javascript" src="dist/schema-form.js"></script>
+<script type="text/javascript" src="dist/bootstrap-decorator.min.js"></script>
+<script type="text/javascript" src="bower_components/angular-schema-form-datepicker/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="bower_components/angular-schema-form-colorpicker/bootstrap-colorpicker.min.js"></script>
+
+<script src="minimatch.js"></script>
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
